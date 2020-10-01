@@ -23,4 +23,26 @@ func main() {
 	// 数组是可变的: 即 可以使用数组名[i]的方式对数组中的元素进行更改
 	array3[1] = 9
 	fmt.Println(array3)
+
+	// 数组的普通值传递会发生值拷贝，内部操作不会修改原始数组的值
+	arr := [...]int{1, 2, 3}
+	valueCopy(arr)
+	fmt.Println(arr)
+	// 传递引用后数组值发生变化
+	refCopy(&arr)
+	fmt.Println(arr)
+}
+
+func valueCopy(arr [3]int) {
+	for idx, val := range arr {
+		arr[idx] = val + 1
+	}
+	fmt.Println(arr)
+}
+
+func refCopy(arr *[3]int) {
+	for idx := range arr {
+		arr[idx]++
+	}
+	fmt.Println(arr)
 }
