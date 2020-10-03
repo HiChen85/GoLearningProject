@@ -22,7 +22,10 @@ func main() {
 	// fmt.Println(len(sli1), cap(sli1))
 	// 从这里可以看出, 当扩容后,原有的slice指向新的底层数组
 	// 对slice新的修改不会再影响原有的slice
-	fmt.Println(pivotIndex([]int{-1, -1, -1, 0, 1, 1}))
+	// fmt.Println(pivotIndex([]int{-1, -1, -1, 0, 1, 1}))
+	s := []int{0, 1, 2, 3, 4, 5}
+	changeSlice(s)
+	fmt.Println(s)
 }
 
 func pivotIndex(nums []int) int {
@@ -38,4 +41,10 @@ func pivotIndex(nums []int) int {
 		leftSum += nums[i-1]
 	}
 	return -1
+}
+
+func changeSlice(s []int) {
+	for i := 0; i < len(s); i++ {
+		s[i] = i + 1
+	}
 }
