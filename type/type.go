@@ -5,7 +5,7 @@ import "fmt"
 // 类型声明的语句: type 类型名称 底层类型.
 
 // Celsius 声明一个摄氏度类型,它和float64具有相同的底层类型, 即float64类型
-type Celsius float64
+type Celsius float64 // 这种结构都叫做自定义类型
 
 // Fehrenheit 华氏温度 和float64具有相同的底层结构
 type Fehrenheit float64
