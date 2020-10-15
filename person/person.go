@@ -25,3 +25,15 @@ func (p *Person) SetName(name string) {
 func (p *Person) SetAge(age int) {
 	p.age = age
 }
+
+// 使用工厂方法 + 类型的访问权限来创建类型的实例
+// 工厂方法一般使用New开头, 返回一个指定类型的一个指针
+// 工厂方法类似于java中的构造器
+
+// NewPerson 工厂方法创建Person实例
+func NewPerson(name string, age int) *Person {
+	p := new(Person)
+	p.name = name
+	p.age = age
+	return p
+}
